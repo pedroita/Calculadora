@@ -4,10 +4,6 @@ import './App.css';
 import './index.css'
 
 
-
-
-
-
 function App() {
   const [numero1, setNumero1] = useState(0)
   const [numero2, setNumero2] = useState(0)
@@ -21,7 +17,7 @@ function App() {
 
   return (
     <div className='App'>
-      <h1 >{process.env.REACT_TITLE}</h1>
+      <h1 className='Titulo' >{process.env.REACT_APP_SITE_TITLE}</h1>
       <input onChange={(e) => setNumero1(Number(e.target.value))} className="numero1" type="number" />
       <input onChange={(e) => setNumero2(Number(e.target.value))} className="numero2" type="number" /><br></br><br></br>
       <button className="botao" onClick={() => somatudo()}>+</button>
