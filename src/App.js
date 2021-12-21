@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
 import './App.css';
+import './index.css'
+
+
+
+
+
 
 function App() {
+  const [numero1, setNumero1] = useState(0)
+  const [numero2, setNumero2] = useState(0)
+  const [resultado, setResultado] = useState(0)
+
+  const somatudo = () => {
+    setResultado(numero1 + numero2);
+  }
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className='App'>
+      <h1 >{process.env.REACT_TITLE}</h1>
+      <input onChange={(e) => setNumero1(Number(e.target.value))} className="numero1" type="number" />
+      <input onChange={(e) => setNumero2(Number(e.target.value))} className="numero2" type="number" /><br></br><br></br>
+      <button className="botao" onClick={() => somatudo()}>+</button>
+      <h3 className="Resultado">Resultado: {resultado}</h3>
+
+
+
+    </div >
+
   );
 }
 
